@@ -1,0 +1,14 @@
+
+Sub Imprimir()
+Application.ScreenUpdating = False
+    On Error GoTo Sair
+    'Escreva o nome da planilha desejada:
+    Sheets("Oculta").Visible = True
+    Sheets("Oculta").Select
+    ActiveSheet.PageSetup.PrintArea = "$A$1:$J$57"
+    ActiveWindow.SelectedSheets.PrintOut Copies:=1, Collate:=True
+Sair:
+Sheets("Oculta").Visible = False
+Sheets("Plan1").Select
+Application.ScreenUpdating = True
+End Sub
